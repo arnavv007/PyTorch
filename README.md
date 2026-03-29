@@ -26,8 +26,6 @@ appearance. Like you have no idea about how PyTorch works and you are building a
 ### Final verdict:
 I hope that my this journey can help me achieve what I really want.
 
-<<<<<<< HEAD
+
 *Date: 29/Mar/2026 - Time: 9:52 PM*
-=======
-*Date: 29/Mar/2026 - Time: 9:52 PM*
->>>>>>> b5d38d45387755a5af917dc599868dc6b677e3fb
+
