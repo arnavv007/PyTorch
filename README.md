@@ -2,6 +2,8 @@
 
 ![Alt text](NeuralNetworks.png)
 
+### **Introduction:**
+
 Currently, I am a 14 years old student and a programmer. I have the knowledge of Python, Godot (a game engine), and have done DSA (not completely, but a lot of it) with C.<br><br>
 So... I was just looking around to learn something new and got introduced with Neural Networks By [3Blue 1Brown's](https://www.youtube.com/@3blue1brown) [this video.](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
 <br><br>
