@@ -59,9 +59,13 @@ def plot_decision_boundary(model: torch.nn.Module, X: torch.Tensor, y: torch.Ten
 
     # Test for multi-class or binary and adjust logits to prediction labels
     if len(torch.unique(y)) > 2:
-        y_pred = torch.softmax(y_logits, dim=1).argmax(dim=1)  # mutli-class
+        y_pred = torch.softmax(y_logits, dim=1).argmax(dim=1)  # multi-class
     else:
-        y_pred = torch.round(torch.sigmoid(y_logits))  # binary
+    # handles output shape (N,), (N,1), or (N,2)
+        if y_logits.shape[1] == 2:
+            y_pred = torch.softmax(y_logits, dim=1).argmax(dim=1)  # 2-neuron binary
+        else:
+            y_pred = torch.round(torch.sigmoid(y_logits.squeeze()))  # 1-neuron binary
 
     # Reshape preds and plot
     y_pred = y_pred.reshape(xx.shape).detach().numpy()
