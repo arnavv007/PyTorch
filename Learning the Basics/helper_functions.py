@@ -7,6 +7,7 @@ import torch
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 from torch import nn
 
 import os
@@ -296,3 +297,6 @@ def download_data(source: str,
             os.remove(data_path / target_file)
     
     return image_path
+
+
+
