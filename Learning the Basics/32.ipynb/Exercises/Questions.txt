@@ -1,0 +1,25 @@
+(Date - 14/June/2026)
+---------------------------------------------------------------------------------
+
+1. Turn the code to get the data (from section 1. Get Data above) into a Python script, such as get_data.py.
+
+    * When you run the script using python get_data.py it should check if the data already exists and skip downloading if it does.
+
+    * If the data download is successful, you should be able to access the pizza_steak_sushi images from the data directory.
+
+------------------------------------------------------------------------------------
+
+2. Use Python's argparse module to be able to send the train.py custom hyperparameter values for training procedures.
+
+    * Add an argument for using a different:
+        * Training/testing directory
+        * Learning rate
+        * Batch size
+        * Number of epochs to train for
+        * Number of hidden units in the TinyVGG model
+
+    * Keep the default values for each of the above arguments as what they already are (as in notebook 05).
+
+    * For example, you should be able to run something similar to the following line to train a TinyVGG model with a learning rate of 0.003 and a batch size of 64 for 20 epochs: python train.py --learning_rate 0.003 --batch_size 64 --num_epochs 20.
+
+    * Note: Since train.py leverages the other scripts we created in section 05, such as, model_builder.py, utils.py and engine.py, you'll have to make sure they're available to use too. You can find these in the going_modular folder on the course GitHub.
