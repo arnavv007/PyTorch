@@ -1,3 +1,5 @@
+print(__name__)
+
 import torch
 import torchvision
 import matplotlib.pyplot as plt
@@ -57,6 +59,3 @@ def pred_and_plot_image(model: torch.nn.Module,
 
     print(f"Prediction : {class_names[target_image_pred_labels]}\nProbability : {target_image_pred_probs.max()}")
     return
-
-pred_and_plot_image(model=model, image_path=file_path)
-print("Done!")
