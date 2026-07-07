@@ -1,0 +1,57 @@
+/* Wikipedia-style Idea box */
+
+.md-typeset .admonition.idea,
+.md-typeset details.idea {
+    display: flex;
+    align-items: flex-start;
+
+    background: #171717;
+    border: 1px solid #555;
+    border-left: 6px solid #c77d00;
+
+    border-radius: 0;
+    box-shadow: none;
+
+    padding: 18px;
+    margin: 1.5em 0;
+}
+
+/* Remove Material header styling */
+.md-typeset .idea > .admonition-title,
+.md-typeset .idea > summary {
+    background: transparent !important;
+    border: none !important;
+
+    display: flex;
+    align-items: flex-start;
+
+    min-width: 170px;
+    margin: 0;
+    padding: 0;
+
+    font-weight: 600;
+}
+
+/* Hide default icon */
+.md-typeset .idea > .admonition-title::before,
+.md-typeset .idea > summary::before {
+    display: none !important;
+}
+
+/* Custom bulb */
+.md-typeset .idea > .admonition-title::after,
+.md-typeset .idea > summary::after {
+    content: "💡";
+
+    font-size: 42px;
+    margin-right: 18px;
+
+    line-height: 1;
+}
+
+/* Content */
+.md-typeset .idea > *:not(.admonition-title):not(summary) {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+}

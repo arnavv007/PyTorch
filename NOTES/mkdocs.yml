@@ -1,0 +1,29 @@
+site_name: Arnav's Deep Learning Notes
+
+nav:
+  - Home: index.md
+  - Vision Transformer: vision_transformer.md
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - md_in_html
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+theme:
+  name: material
+  icon:
+    admonition:
+      tip: material/lightbulb
+
+extra_css:
+  - overrides/extra_1.css
+  
+
+

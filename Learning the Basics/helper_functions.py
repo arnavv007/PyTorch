@@ -4,22 +4,16 @@ A series of helper functions used throughout the course.
 If a function gets defined once and could be used over and over, it'll go in here.
 """
 import torch
+from torch import nn
 import matplotlib.pyplot as plt
 import numpy as np
-
-
-from torch import nn
-
 import os
 import zipfile
-
 from pathlib import Path
-
 import requests
-
-# Walk through an image classification directory and find out how many files (images)
-# are in each subdirectory.
 import os
+from typing import List
+import torchvision
 
 def walk_through_dir(dir_path):
     """
@@ -75,8 +69,6 @@ def plot_decision_boundary(model: torch.nn.Module, X: torch.Tensor, y: torch.Ten
     plt.xlim(xx.min(), xx.max())
     plt.ylim(yy.min(), yy.max())
 
-
-# Plot linear data or training and test and predictions (optional)
 def plot_predictions(
     train_data, train_labels, test_data, test_labels, predictions=None
 ):
@@ -98,8 +90,6 @@ def plot_predictions(
     # Show the legend
     plt.legend(prop={"size": 14})
 
-
-# Calculate accuracy (a classification metric)
 def accuracy_fn(y_true, y_pred):
     """Calculates accuracy between truth labels and predictions.
 
@@ -113,7 +103,6 @@ def accuracy_fn(y_true, y_pred):
     correct = torch.eq(y_true, y_pred).sum().item()
     acc = (correct / len(y_pred)) * 100
     return acc
-
 
 def print_train_time(start, end, device=None):
     """Prints difference between start and end time.
@@ -130,8 +119,6 @@ def print_train_time(start, end, device=None):
     print(f"\nTrain time on {device}: {total_time:.3f} seconds")
     return total_time
 
-
-# Plot loss curves of a model
 def plot_loss_curves(results):
     """Plots training curves of a results dictionary.
 
@@ -167,13 +154,6 @@ def plot_loss_curves(results):
     plt.title("Accuracy")
     plt.xlabel("Epochs")
     plt.legend()
-
-
-# Pred and plot image function from notebook 04
-# See creation: https://www.learnpytorch.io/04_pytorch_custom_datasets/#113-putting-custom-image-prediction-together-building-a-function
-from typing import List
-import torchvision
-
 
 def pred_and_plot_image(
     model: torch.nn.Module,
@@ -283,8 +263,8 @@ def download_data(source: str,
         # Download pizza, steak, sushi data
         target_file = Path(source).name
         with open(data_path / target_file, "wb") as f:
-            request = requests.get(source)
             print(f"[INFO] Downloading {target_file} from {source}...")
+            request = requests.get(source)
             f.write(request.content)
 
         # Unzip pizza, steak, sushi data
