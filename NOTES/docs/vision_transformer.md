@@ -7,9 +7,7 @@
 !!! Note "NOTE"
     * This research paper explainer is written by a **15 years old student**, not by a superhuman (professional). I've also used AI to fact-check the explanations, so there shouldn't be any major factual mistakes. Don't judge this explanation by my age. Judge it by how much you understand after reading it. 😄
 
-    * Already understand this paper? Just here for a quick revision? 😄
-
-    Then I recommend jumping directly to the section: [A walk through the ViT architecture: Short Version](#short-walk).
+    * Already understand this paper? Just here for a quick revision? 😄 Then I recommend jumping directly to the section: [A walk through the ViT architecture: Short Version](#short-walk).
 
 !!! abstract "After reading this explainer, you will understand"
     Theory:
@@ -216,7 +214,7 @@ Now here comes the Transformer Encoder Block. Let's understand it deeply.
     <h3 id="multi-attention">Multi-Head Attention</h3>
 
     <figure markdown>
-    ![Multi-Head-Self-Attention(2)](images/Attention_Neural_network.png)
+    ![Multi-Head-Self-Attention(2)](images/Multi-Head_self_attention.png)
     <figcaption>
     Figure 4: An another chart showing Multi-Head Self-Attention. It shows that there are multiple heads, and each head is responsible for identifying something specific. For example - Color, grammar, Objects, Actions, etc. There are 12 such heads in the ViT-Base.
     </figcaption>
@@ -288,7 +286,7 @@ Patch 4: I have nose
     Why is it useful?<br>
     Because the model gradually learns new information without losing the existing one.
 
-    ??? question "Why is it called `Residual` connection?"<br>
+    ??? question "Why is it called `Residual` connection?"    
         Suppose you wrote a 1000 words essay. Now if you want to make some edits, then you won't write everything from scratch. These edits are residual. The original essay is preserved.
 
         So the model only learns the difference (residual), instead of learning the entire representation.
@@ -402,7 +400,7 @@ When we repeat the transformer encoder block, something happens like:
 * 2nd-5th blocks: Combines these into larger patterns (eyes, ears, wheels).
 * Later blocks: Understands high-level concepts (cat face, car, airplane).
 
-So: In the ViT-Beta the above [Transformer Encoder Block](#04-into-the-transformer-encoder-block-transformer-block-example) is repeated 12 times for more computations and better results.
+So: In the ViT-Base, the above [Transformer Encoder Block](#transformer-block-example) is repeated 12 times for more computations and better results.
 
 ### 0.6 Taking the CLS token
 After the **197 tokens** have passed through **12 repeated Transformer Encoder blocks**, the [CLS token](#cls-token) has gathered all the relevant information (from the 196 patches). So the model simply ignores rest of the 196 tokens, and keeps only the first token - CLS token.
